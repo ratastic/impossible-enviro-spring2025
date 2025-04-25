@@ -476,7 +476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &323620977
 RectTransform:
   m_ObjectHideFlags: 0
@@ -884,9 +884,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1931369600}
-        m_TargetAssemblyTypeName: OnionAnimPeel, Assembly-CSharp
-        m_MethodName: PlayAnimation
+      - m_Target: {fileID: 1972756388}
+        m_TargetAssemblyTypeName: ButtonOnion, Assembly-CSharp
+        m_MethodName: Middle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.030518316, g: 0.8773585, b: 0, a: 0.6862745}
+  m_Color: {r: 0.030518316, g: 0.8773585, b: 0, a: 0.34117648}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1871,9 +1871,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1982914109}
-        m_TargetAssemblyTypeName: OnionAnimPeel, Assembly-CSharp
-        m_MethodName: PlayAnimation
+      - m_Target: {fileID: 1972756388}
+        m_TargetAssemblyTypeName: ButtonOnion, Assembly-CSharp
+        m_MethodName: Right
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1896,7 +1896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.19188325, b: 0.19188325, a: 0.6862745}
+  m_Color: {r: 0.8301887, g: 0.19188325, b: 0.19188325, a: 0.3254902}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2095,9 +2095,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 908060232}
-        m_TargetAssemblyTypeName: OnionAnimPeel, Assembly-CSharp
-        m_MethodName: PlayAnimation
+      - m_Target: {fileID: 1972756388}
+        m_TargetAssemblyTypeName: ButtonOnion, Assembly-CSharp
+        m_MethodName: Left
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.62352943}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2227,7 +2227,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1749434506}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1972756388}
+        m_TargetAssemblyTypeName: ButtonOnion, Assembly-CSharp
+        m_MethodName: NextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1749434506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2494,8 +2506,60 @@ Transform:
   - {fileID: 908060233}
   - {fileID: 1931369601}
   - {fileID: 1982914110}
+  - {fileID: 1972756387}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1972756386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1972756387}
+  - component: {fileID: 1972756388}
+  m_Layer: 0
+  m_Name: AllButtonScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1972756387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972756386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1965318479}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972756388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972756386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd663855b8ca545f4b7a55809518845d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 622920706}
+  BrainAnimator: {fileID: 323620978}
+  BrianPickUp: {fileID: 323620976}
+  leftButton: {fileID: 1635271596}
+  middleButton: {fileID: 761195385}
+  rightButton: {fileID: 1488923984}
+  nextButton: {fileID: 1749434503}
 --- !u!1 &1982914108
 GameObject:
   m_ObjectHideFlags: 0

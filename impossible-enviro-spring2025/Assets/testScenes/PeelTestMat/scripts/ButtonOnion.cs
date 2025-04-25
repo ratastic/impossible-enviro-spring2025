@@ -76,7 +76,7 @@ public class ButtonOnion : MonoBehaviour
         //animator.SetTrigger("BrainPick");
 
 
-        Invoke("ChangeScene", 3f);  //changes scene in 3 sec afrwe anim finsih
+        Invoke("ChangeScene", 5f);  //changes scene in50 sec afrwe anim finsih
     }
 
     void ChangeScene()
