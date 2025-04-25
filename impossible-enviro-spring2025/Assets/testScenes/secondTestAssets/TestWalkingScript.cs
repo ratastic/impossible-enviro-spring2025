@@ -11,6 +11,11 @@ public class TestWalkingScript : MonoBehaviour
     public GameObject cam3d;
     public GameObject cam2d;
 
+    public float jumping = 5f;
+    public Rigidbody rb;
+
+    private bool onTheGround = true;
+
     void Start()
     {
         cam3d.SetActive(true);
@@ -41,14 +46,30 @@ public class TestWalkingScript : MonoBehaviour
 
         if (move2d == true)
         {
-            if (Input.GetKey("a") || Input.GetKey("s"))
+            if (Input.GetKey("a")) //|| Input.GetKey("s"))
             {
                 transform.position += new Vector3(0, 0, -moveForce);
             }
-            if (Input.GetKey("d") || Input.GetKey("w"))
+            if (Input.GetKey("d")) //|| Input.GetKey("w"))
             {
                 transform.position += new Vector3(0, 0, moveForce);
             }
+
+            if (Input.GetKey("w")){
+                transform.position += new Vector3(-moveForce, 0, 0);
+            }
+
+            if (Input.GetKey("s"))
+            {
+                transform.position += new Vector3(moveForce, 0, 0);
+            }
+
+            if (Input.GetKey("space") && onTheGround)
+            {
+                rb.AddForce(Vector3.up * jumping, ForceMode.Impulse);
+                onTheGround = false;
+            }
+
         }
     }
 
@@ -61,6 +82,15 @@ public class TestWalkingScript : MonoBehaviour
 
             cam3d.SetActive(move3d);
             cam2d.SetActive(move2d);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onTheGround = true;
         }
     }
 }
