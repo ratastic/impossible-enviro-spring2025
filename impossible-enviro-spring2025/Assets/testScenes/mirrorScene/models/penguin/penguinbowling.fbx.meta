@@ -3,7 +3,12 @@ guid: 06cdff332679449febc951f660a20636
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pinguin
+    second: {fileID: 2100000, guid: 785693153b22a4f52a5f61171ff00c0b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
