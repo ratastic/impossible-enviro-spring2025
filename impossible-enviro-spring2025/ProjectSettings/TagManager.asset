@@ -10,6 +10,9 @@ TagManager:
   - LDoor
   - RDoor
   - postprocess
+  - onionMan
+  - roomEnter
+  - roomExit
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - Water
   - UI
   - postprocess
-  - 
+  - onionMan
   - 
   - 
   - 
@@ -47,6 +50,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: postprocess
-    uniqueID: 4012270019
+  - name: onionMan
+    uniqueID: 248625177
     locked: 0
