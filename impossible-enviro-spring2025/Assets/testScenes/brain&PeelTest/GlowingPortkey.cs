@@ -12,7 +12,10 @@ public class GlowingPortkey : MonoBehaviour
     void Start()
     {
         targetLight = GetComponent<Light>();
+        targetLight.intensity = 0f;
         StartCoroutine(GlowingLight());
+
+        GameObject.FindGameObjectWithTag("portkey").SetActive(false);
     }
 
     private IEnumerator GlowingLight()
@@ -21,6 +24,8 @@ public class GlowingPortkey : MonoBehaviour
         int direction = 1;
 
         yield return new WaitForSeconds(5f);
+
+        GameObject.FindGameObjectWithTag("portkey").SetActive(true);
 
         while (true)
         {
@@ -37,9 +42,7 @@ public class GlowingPortkey : MonoBehaviour
 
             targetLight.intensity = Mathf.Lerp(minIntensity, maxIntensity, t / flashDuration);
             yield return null;
-
         }
-
     }
 
 }

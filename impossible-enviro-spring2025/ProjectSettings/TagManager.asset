@@ -25,6 +25,7 @@ TagManager:
   - pinkFinalDoor
   - finalOnion
   - mainBlueDoor
+  - portkey
   layers:
   - Default
   - TransparentFX
