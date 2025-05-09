@@ -13,6 +13,17 @@ TagManager:
   - onionMan
   - roomEnter
   - roomExit
+  - staircaseOnion
+  - roomOneOnion
+  - roomTwoOnion
+  - doorOne
+  - blue_roomOne
+  - blue_roomTwo
+  - doorTwo
+  - green_roomTwo
+  - green_roomOne
+  - pinkFinalDoor
+  - finalOnion
   layers:
   - Default
   - TransparentFX
