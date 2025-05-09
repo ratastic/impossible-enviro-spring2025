@@ -31,6 +31,9 @@ public class StaircaseOnionLogic : MonoBehaviour
             staircaseCam.SetActive(false);
             roomOneOnion.SetActive(true);
             staircaseOnion.SetActive(false);
+
+            GameObject.FindGameObjectWithTag("green_roomOne").GetComponent<BoxCollider>().enabled = false;
+            GameObject.FindGameObjectWithTag("green_roomTwo").GetComponent<BoxCollider2D>().enabled = false;
         }
 
         if (other.gameObject.CompareTag("doorTwo"))
@@ -38,6 +41,15 @@ public class StaircaseOnionLogic : MonoBehaviour
             roomTwoOnion.SetActive(true);
             staircaseCam.SetActive(false);
             staircaseOnion.SetActive(false);
+
+
+            GameObject.FindGameObjectWithTag("blue_roomOne").GetComponent<BoxCollider>().enabled = false;
+            GameObject.FindGameObjectWithTag("blue_roomTwo").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.FindGameObjectWithTag("green_roomOne").GetComponent<BoxCollider>().enabled = true;
+            GameObject.FindGameObjectWithTag("green_roomTwo").GetComponent<BoxCollider2D>().enabled = true;
+
+
+
 
             //roomTwoOnion.transform.position = new Vector3(55.05f, -5.13f, -35.21f);
         }

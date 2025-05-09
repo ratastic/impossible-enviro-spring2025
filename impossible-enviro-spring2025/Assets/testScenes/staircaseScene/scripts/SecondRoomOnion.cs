@@ -11,6 +11,9 @@ public class SecondRoomOnion : MonoBehaviour
     public Transform staircaseOnionPos;
 
     public GameObject roomOneOnion;
+
+    public GameObject mainBlueDoor;
+    public GameObject mainGreenDoor;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +37,15 @@ public class SecondRoomOnion : MonoBehaviour
 
             staircaseOnionPos.transform.position = new Vector3(-1.795f, -0.015f, 5.14f);
             GameObject.FindGameObjectWithTag("blue_roomTwo").GetComponent<BoxCollider2D>().enabled = false;
+
+            mainBlueDoor.SetActive(true);
+            mainGreenDoor.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("green_roomTwo"))
         {
+
+
             roomOneOnion.SetActive(true);
             secondRoomOnion.SetActive(false);
 

@@ -9,6 +9,8 @@ public class FirstRoomOnion : MonoBehaviour
 
     public GameObject staircaseOnion;
     public GameObject staircaseCam;
+
+    public GameObject pinkDoor;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class FirstRoomOnion : MonoBehaviour
             staircaseOnion.transform.position = new Vector3(2.37f, 0.23f, 5.88f);
             staircaseCam.SetActive(true);
 
+            pinkDoor.SetActive(true);
 
             //GameObject.FindGameObjectWithTag("staircaseOnion").SetActive(true);
             //GameObject.FindGameObjectWithTag("staircaseOnion").transform.position = new Vector3(2.37f, 0.23f, 5.88f);

@@ -820,7 +820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &193224512
 Transform:
   m_ObjectHideFlags: 0
@@ -1332,7 +1332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &277332957
 Transform:
   m_ObjectHideFlags: 0
@@ -1658,11 +1658,11 @@ GameObject:
   - component: {fileID: 321009664}
   m_Layer: 0
   m_Name: "blueDoor \u62F7\u8D1D"
-  m_TagString: Untagged
+  m_TagString: mainBlueDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &321009663
 Transform:
   m_ObjectHideFlags: 0
@@ -10240,6 +10240,7 @@ MonoBehaviour:
   firstRoomOnion: {fileID: 1972719020}
   staircaseOnion: {fileID: 920839276}
   staircaseCam: {fileID: 388308234}
+  pinkDoor: {fileID: 193224511}
 --- !u!1 &1983548192
 GameObject:
   m_ObjectHideFlags: 0
@@ -12034,6 +12035,8 @@ MonoBehaviour:
   staircaseCam: {fileID: 388308234}
   staircaseOnionPos: {fileID: 903360974}
   roomOneOnion: {fileID: 1972719020}
+  mainBlueDoor: {fileID: 321009662}
+  mainGreenDoor: {fileID: 277332956}
 --- !u!1 &8795086336881966703
 GameObject:
   m_ObjectHideFlags: 0

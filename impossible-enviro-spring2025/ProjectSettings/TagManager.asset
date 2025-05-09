@@ -24,6 +24,7 @@ TagManager:
   - green_roomOne
   - pinkFinalDoor
   - finalOnion
+  - mainBlueDoor
   layers:
   - Default
   - TransparentFX
