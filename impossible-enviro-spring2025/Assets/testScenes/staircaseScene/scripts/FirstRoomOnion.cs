@@ -11,6 +11,8 @@ public class FirstRoomOnion : MonoBehaviour
     public GameObject staircaseCam;
 
     public GameObject pinkDoor;
+
+    public AudioSource[] fartSounds = new AudioSource[2];
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,9 @@ public class FirstRoomOnion : MonoBehaviour
         {
             secondRoomOnion.SetActive(true);
             firstRoomOnion.SetActive(false);
+
+            int randomIndex = Random.Range(0, fartSounds.Length);
+            fartSounds[randomIndex].Play();
         }
 
         if (other.gameObject.CompareTag("green_roomOne"))
@@ -40,6 +45,9 @@ public class FirstRoomOnion : MonoBehaviour
             staircaseCam.SetActive(true);
 
             pinkDoor.SetActive(true);
+
+            int randomIndex = Random.Range(0, fartSounds.Length);
+            fartSounds[randomIndex].Play();
 
             //GameObject.FindGameObjectWithTag("staircaseOnion").SetActive(true);
             //GameObject.FindGameObjectWithTag("staircaseOnion").transform.position = new Vector3(2.37f, 0.23f, 5.88f);

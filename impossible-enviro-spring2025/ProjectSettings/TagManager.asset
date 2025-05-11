@@ -26,6 +26,10 @@ TagManager:
   - finalOnion
   - mainBlueDoor
   - portkey
+  - finalOnionBorder
+  - jackNBox
+  - miniDesk
+  - clownToys
   layers:
   - Default
   - TransparentFX

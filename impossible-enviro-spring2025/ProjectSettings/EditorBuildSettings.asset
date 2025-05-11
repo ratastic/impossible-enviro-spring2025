@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/testScenes/brain&PeelTest/BrainTest.unity
     guid: c4ea731bdcff2284bbb12449411d1684
+  - enabled: 1
+    path: Assets/testScenes/staircaseScene/Staircase.unity
+    guid: 30c8235863ae88a4b8c64abb57fa79b8
   m_configObjects: {}

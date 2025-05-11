@@ -14,10 +14,18 @@ public class SecondRoomOnion : MonoBehaviour
 
     public GameObject mainBlueDoor;
     public GameObject mainGreenDoor;
+
+    public GameObject jackNBoxText;
+    public GameObject miniDeskText;
+    public GameObject clownToysText;
+
+    public FirstRoomOnion firstRoomOnion;
     // Start is called before the first frame update
     void Start()
     {
-        
+        jackNBoxText.SetActive(false);
+        miniDeskText.SetActive(false);
+        clownToysText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,17 +48,54 @@ public class SecondRoomOnion : MonoBehaviour
 
             mainBlueDoor.SetActive(true);
             mainGreenDoor.SetActive(true);
+
+            int randomIndex = Random.Range(0, firstRoomOnion.fartSounds.Length);
+            firstRoomOnion.fartSounds[randomIndex].Play();
         }
 
         if (other.gameObject.CompareTag("green_roomTwo"))
         {
-
-
             roomOneOnion.SetActive(true);
             secondRoomOnion.SetActive(false);
 
             //roomOneOnion.transform.position = new Vector3(-68.17f, 1.95403f, 39.39f);
             //roomOneOnion.transform.Rotate(0f, 90.0f, 0f);
+
+            int randomIndex = Random.Range(0, firstRoomOnion.fartSounds.Length);
+            firstRoomOnion.fartSounds[randomIndex].Play();
+        }
+
+        if (other.gameObject.CompareTag("jackNBox"))
+        {
+            jackNBoxText.SetActive(true);
+        }
+
+        if (other.gameObject.CompareTag("miniDesk"))
+        {
+            miniDeskText.SetActive(true);
+        }
+
+        if (other.gameObject.CompareTag("clownToys"))
+        {
+            clownToysText.SetActive(true);
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("jackNBox"))
+        {
+            jackNBoxText.SetActive(false);
+        }
+
+        if (collision.gameObject.CompareTag("miniDesk"))
+        {
+            miniDeskText.SetActive(false);
+        }
+
+        if (collision.gameObject.CompareTag("clownToys"))
+        {
+            clownToysText.SetActive(false);
         }
     }
 }

@@ -11,7 +11,8 @@ public class StaircaseOnionLogic : MonoBehaviour
     public GameObject roomTwoOnion;
 
     public GameObject finalOnion;
-    
+
+    public FirstRoomOnion firstRoomOnion;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,9 @@ public class StaircaseOnionLogic : MonoBehaviour
 
             GameObject.FindGameObjectWithTag("green_roomOne").GetComponent<BoxCollider>().enabled = false;
             GameObject.FindGameObjectWithTag("green_roomTwo").GetComponent<BoxCollider2D>().enabled = false;
+
+            int randomIndex = Random.Range(0, firstRoomOnion.fartSounds.Length);
+            firstRoomOnion.fartSounds[randomIndex].Play();
         }
 
         if (other.gameObject.CompareTag("doorTwo"))
@@ -48,9 +52,8 @@ public class StaircaseOnionLogic : MonoBehaviour
             GameObject.FindGameObjectWithTag("green_roomOne").GetComponent<BoxCollider>().enabled = true;
             GameObject.FindGameObjectWithTag("green_roomTwo").GetComponent<BoxCollider2D>().enabled = true;
 
-
-
-
+            int randomIndex = Random.Range(0, firstRoomOnion.fartSounds.Length);
+            firstRoomOnion.fartSounds[randomIndex].Play();
             //roomTwoOnion.transform.position = new Vector3(55.05f, -5.13f, -35.21f);
         }
 
@@ -59,6 +62,9 @@ public class StaircaseOnionLogic : MonoBehaviour
             staircaseOnion.SetActive(false);
             staircaseCam.SetActive(false);
             finalOnion.SetActive(true);
+
+            int randomIndex = Random.Range(0, firstRoomOnion.fartSounds.Length);
+            firstRoomOnion.fartSounds[randomIndex].Play();
         }
     }
 }
