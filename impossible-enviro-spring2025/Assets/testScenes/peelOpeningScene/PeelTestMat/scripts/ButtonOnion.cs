@@ -5,82 +5,121 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ButtonOnion : MonoBehaviour
-
 {
     public Animator animator;
-
-    public Animator BrainAnimator; 
+    public Animator BrainAnimator;
     public GameObject BrianPickUp;
-
 
     public Button leftButton;
     public Button middleButton;
     public Button rightButton;
 
-    public GameObject nextButton; 
+    public GameObject[] allButtons; 
+
+    public GameObject nextButton;
+    public GameObject nextImage;
 
     private bool leftClick = false;
     private bool middleClick = false;
     private bool rightClick = false;
 
-
     void Start()
-        {
-            nextButton.SetActive(false); 
-        }
+    {
+        nextButton.SetActive(false);
+        nextImage.SetActive(false);
+    }
 
     public void Left()
-        {
-            animator.SetTrigger("LeftOnion");
-            leftClick = true;
+    {
+        animator.SetTrigger("LeftOnion");
+        leftClick = true;
 
-            AllButtonClicked();
+        // Hide all buttons immediately
+        foreach (GameObject btn in allButtons)
+        {
+            btn.SetActive(false);
         }
+
+        // Permanently disable this button
+        leftButton.interactable = false;
+
+        // Optionally reactivate others
+        StartCoroutine(ReactivateUnclickedButtons(2.5f));
+
+        AllButtonClicked();
+    }
 
     public void Middle()
-        {
-            animator.SetTrigger("MidOnion");
-            middleClick = true;
+    {
+        animator.SetTrigger("MidOnion");
+        middleClick = true;
 
-            AllButtonClicked();
+        foreach (GameObject btn in allButtons)
+        {
+            btn.SetActive(false);
         }
+
+        middleButton.interactable = false;
+
+        StartCoroutine(ReactivateUnclickedButtons(2.5f));
+
+        AllButtonClicked();
+    }
 
     public void Right()
-        {
-            animator.SetTrigger("RightOnion");
-            rightClick = true;
+    {
+        animator.SetTrigger("RightOnion");
+        rightClick = true;
 
-             AllButtonClicked();
+        foreach (GameObject btn in allButtons)
+        {
+            btn.SetActive(false);
         }
 
-        private void AllButtonClicked()
-        {
-            if (leftClick && middleClick && rightClick)
-            {
-                StartCoroutine(ButtonDelay(5f));
+        rightButton.interactable = false;
 
-            }
-        }
+        StartCoroutine(ReactivateUnclickedButtons(2.5f));
 
-        private IEnumerator ButtonDelay(float delay)
+        AllButtonClicked();
+    }
+
+    private void AllButtonClicked()
+    {
+        if (leftClick && middleClick && rightClick)
         {
-            yield return new WaitForSeconds(delay);
-            nextButton.SetActive(true);
+            StartCoroutine(ButtonDelay(5f));
         }
+    }
+
+    private IEnumerator ButtonDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        nextButton.SetActive(true);
+        nextImage.SetActive(true);
+    }
+
+    private IEnumerator ReactivateUnclickedButtons(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (!leftClick) leftButton.gameObject.SetActive(true);
+        if (!middleClick) middleButton.gameObject.SetActive(true);
+        if (!rightClick) rightButton.gameObject.SetActive(true);
+    }
 
     public void NextButton()
     {
+        nextButton.SetActive(false);
+        nextImage.SetActive(false);
+
         BrianPickUp.SetActive(true);
-
         BrainAnimator.SetTrigger("BrainPick");
-        //animator.SetTrigger("BrainPick");
 
-
-        Invoke("ChangeScene", 5f);  //changes scene in50 sec afrwe anim finsih
+        Invoke("ChangeScene", 8f);
     }
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("BrainTest"); 
+        SceneManager.LoadScene("BrainTest");
     }
 }
