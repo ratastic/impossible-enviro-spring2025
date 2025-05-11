@@ -66,3 +66,24 @@ TagManager:
   - name: onionMan
     uniqueID: 248625177
     locked: 0
+  - name: A (Front)
+    uniqueID: 1840391841
+    locked: 0
+  - name: B
+    uniqueID: 2155773171
+    locked: 0
+  - name: C
+    uniqueID: 2733318155
+    locked: 0
+  - name: D
+    uniqueID: 1327464483
+    locked: 0
+  - name: E
+    uniqueID: 4247681417
+    locked: 0
+  - name: F
+    uniqueID: 3698790023
+    locked: 0
+  - name: G (Back)
+    uniqueID: 3876497135
+    locked: 0

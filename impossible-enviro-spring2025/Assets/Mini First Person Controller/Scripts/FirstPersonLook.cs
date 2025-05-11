@@ -36,4 +36,12 @@ public class FirstPersonLook : MonoBehaviour
         transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);
         character.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
     }
+
+    // Add this method to reset look from outside
+    public void ResetLook(Vector2 newVelocity)
+    {
+        velocity = newVelocity;
+        frameVelocity = Vector2.zero;
+    }
+
 }
