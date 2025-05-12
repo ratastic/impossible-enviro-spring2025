@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/testScenes/StartingScene/StartingScene.unity
+    guid: dfed36939c653c9468bb29a1fc368def
+  - enabled: 1
     path: Assets/testScenes/peelOpeningScene/PeelingTest.unity
     guid: 45f01cac127634af2ae6ff79456ebec2
   - enabled: 1
