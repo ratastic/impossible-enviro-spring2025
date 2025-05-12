@@ -8,16 +8,22 @@ public class SecondRoomOnion : MonoBehaviour
     public GameObject staircaseOnion;
     public GameObject staircaseCam;
 
+
     public Transform staircaseOnionPos;
 
     public GameObject roomOneOnion;
 
     public GameObject mainBlueDoor;
     public GameObject mainGreenDoor;
+    public GameObject loo;
 
     public GameObject jackNBoxText;
+    public GameObject jackNBoxDoll;
     public GameObject miniDeskText;
     public GameObject clownToysText;
+
+    private bool dollTriggered = false;
+    private int triggerNum = 0;
 
     public FirstRoomOnion firstRoomOnion;
     // Start is called before the first frame update
@@ -26,12 +32,22 @@ public class SecondRoomOnion : MonoBehaviour
         jackNBoxText.SetActive(false);
         miniDeskText.SetActive(false);
         clownToysText.SetActive(false);
+        jackNBoxDoll.SetActive(false);
+        loo.SetActive(false);
+    }
+    private void Update()
+    {
+        if (triggerNum == 3) loo.SetActive(true);
     }
 
     // Update is called once per frame
-    void Update()
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("jackNBox"))
+        {
+            Debug.Log("jack collided");
+        }
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -53,7 +69,7 @@ public class SecondRoomOnion : MonoBehaviour
             firstRoomOnion.fartSounds[randomIndex].Play();
         }
 
-        if (other.gameObject.CompareTag("green_roomTwo"))
+        if (other.gameObject.CompareTag("green_roomTwo")) //toilet
         {
             roomOneOnion.SetActive(true);
             secondRoomOnion.SetActive(false);
@@ -68,16 +84,24 @@ public class SecondRoomOnion : MonoBehaviour
         if (other.gameObject.CompareTag("jackNBox"))
         {
             jackNBoxText.SetActive(true);
+            triggerNum++;
+            if (!dollTriggered)
+            {
+                jackNBoxDoll.SetActive(true);
+                dollTriggered = !dollTriggered;
+            }
         }
 
         if (other.gameObject.CompareTag("miniDesk"))
         {
+            triggerNum++;
             miniDeskText.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("clownToys"))
         {
             clownToysText.SetActive(true);
+            triggerNum++;
         }
     }
 
