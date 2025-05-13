@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: impossible-enviro-spring2025
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: fe360edc01bfc44e9a47ca0d5322ec03, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -22,7 +22,7 @@ PlayerSettings:
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -39,8 +39,12 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_SplashScreenLogos:
+  - logo: {fileID: 21300000, guid: 57398b1842542409ca1002e45062cd25, type: 3}
+    duration: 2.85
+  - logo: {fileID: 10404, guid: 0000000000000000f000000000000000, type: 0}
+    duration: 2.55
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 57398b1842542409ca1002e45062cd25, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
@@ -103,7 +107,7 @@ PlayerSettings:
   xboxEnableFitness: 0
   visibleInBackground: 1
   allowFullscreenSwitch: 1
-  fullscreenMode: 1
+  fullscreenMode: 3
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -803,7 +807,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -823,11 +833,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7469281d-9a0e-4131-9be7-c93ef5c9d9d3
+  cloudProjectId: e389a879-cf5c-409e-9fca-5779dc852760
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: impossible-enviro-spring2025
-  organizationId: ratboyirl
+  organizationId: elvaxx
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

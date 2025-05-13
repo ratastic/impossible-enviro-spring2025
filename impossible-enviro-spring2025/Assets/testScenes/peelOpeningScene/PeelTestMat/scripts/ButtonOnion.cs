@@ -115,7 +115,7 @@ public class ButtonOnion : MonoBehaviour
         BrianPickUp.SetActive(true);
         BrainAnimator.SetTrigger("BrainPick");
 
-        Invoke("ChangeScene", 8f);
+        Invoke("ChangeScene", 7.5f);
     }
 
     void ChangeScene()
