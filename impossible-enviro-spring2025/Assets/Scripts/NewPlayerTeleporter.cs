@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewPlayerTeleporter : MonoBehaviour
 {
     public string PlayerTag;
     public Transform TeleportZoneObject;
+    public GameObject mirror;
 
-    private int counter;
+    private int counter = 0;
+
+    private void Start()
+    {
+        mirror.SetActive(false);
+    }
 
     private void Update()
     {
         if (counter == 3)
         {
-            Debug.Log("changing to the next scene");
+            mirror.SetActive(true);
         }
     }
 
@@ -36,7 +43,14 @@ public class NewPlayerTeleporter : MonoBehaviour
                 lookScript.ResetLook(Vector2.zero);
             }
         }
-
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("HallwayMirror"))
+        {
+            Debug.Log("changing to the next scene");
+            SceneManager.LoadScene(4);
+        }
+    }
 }

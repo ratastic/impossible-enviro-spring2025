@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/testScenes/staircaseScene/Staircase.unity
     guid: 30c8235863ae88a4b8c64abb57fa79b8
+  - enabled: 1
+    path: Assets/testScenes/mirrorScene/MirrorRoom.unity
+    guid: a5bd4449d817042268c0d09df78a2059
   m_configObjects: {}
