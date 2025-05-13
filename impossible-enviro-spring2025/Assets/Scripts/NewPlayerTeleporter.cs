@@ -43,14 +43,20 @@ public class NewPlayerTeleporter : MonoBehaviour
                 lookScript.ResetLook(Vector2.zero);
             }
         }
-    }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("HallwayMirror"))
+        if (other.gameObject.CompareTag("HallwayMirror"))
         {
             Debug.Log("changing to the next scene");
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("MirrorRoom");
         }
     }
+
+    //public void OnTriggerEnter(Collider collision)
+    //{
+    //    if (collision.gameObject.CompareTag("HallwayMirror"))
+    //    {
+    //        Debug.Log("changing to the next scene");
+    //        SceneManager.LoadScene("MirrorRoom");
+    //    }
+    //}
 }
