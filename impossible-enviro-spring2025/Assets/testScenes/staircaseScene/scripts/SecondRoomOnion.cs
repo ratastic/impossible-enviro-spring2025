@@ -33,11 +33,11 @@ public class SecondRoomOnion : MonoBehaviour
         miniDeskText.SetActive(false);
         clownToysText.SetActive(false);
         jackNBoxDoll.SetActive(false);
-        loo.SetActive(false);
+        //loo.SetActive(false);
     }
     private void Update()
     {
-        if (triggerNum == 3) loo.SetActive(true);
+        //if (triggerNum == 3) loo.SetActive(true);
     }
 
     // Update is called once per frame
@@ -84,7 +84,7 @@ public class SecondRoomOnion : MonoBehaviour
         if (other.gameObject.CompareTag("jackNBox"))
         {
             jackNBoxText.SetActive(true);
-            triggerNum++;
+            //triggerNum++;
             if (!dollTriggered)
             {
                 jackNBoxDoll.SetActive(true);
@@ -94,14 +94,14 @@ public class SecondRoomOnion : MonoBehaviour
 
         if (other.gameObject.CompareTag("miniDesk"))
         {
-            triggerNum++;
+            //triggerNum++;
             miniDeskText.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("clownToys"))
         {
             clownToysText.SetActive(true);
-            triggerNum++;
+            //triggerNum++;
         }
     }
 

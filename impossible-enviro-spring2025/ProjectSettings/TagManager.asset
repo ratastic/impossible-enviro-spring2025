@@ -30,6 +30,7 @@ TagManager:
   - jackNBox
   - miniDesk
   - clownToys
+  - toHallway
   layers:
   - Default
   - TransparentFX
